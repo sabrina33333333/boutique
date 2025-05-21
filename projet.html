@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Collection</title>
+    <style>
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image:url('./image/photo_6032682902317287160_y.jpg');
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-image:url('./im/image/meow/meow.jpg');
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product p {
+            margin: 10px 0;
+        }
+
+        .product .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .product .price-dzd {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #f7a6b5;
+        }
+
+        .options {
+            margin-top: 15px;
+        }
+
+        .options select {
+            margin: 5px;
+            padding: 8px;
+        }
+
+        .product button {
+            padding: 10px 20px;
+            background-color: #f7a6b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .product button:hover {
+            background-color: #e695a3;
+        }
+
+        .jeans-category h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>hermosa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="nouvelle-collection.html">Nouvelle Collection</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nouvelle Collection</h1>
+
+        <!-- Section Jeans -->
+        <div class="jeans-category">
+            <h3>Jeans</h3>
+
+            <!-- Jeans Slim -->
+            <div class="product" id="jeans-slim">
+                <h4>Jeans Slim</h4>
+                <img src="jeans-slim.jpg" alt="Jeans Slim">
+                <div class="options">
+                    <label for="color-jeans-slim">Choisir la couleur:</label>
+                    <select id="color-jeans-slim">
+                        <option value="bleu">Bleu</option>
+                        <option value="noir">Noir</option>
+                        <option value="gris">Gris</option>
+                    </select>
+
+                    <label for="size-jeans-slim">Choisir la taille:</label>
+                    <select id="size-jeans-slim">
+                        <option value="xxs">XXS</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <p class="price">Prix: <span class="price-dzd">6 500 DZD</span></p>
+                <button onclick="addToCart('Jeans Slim', 6500, 'jeans-slim')">Ajouter au panier</button>
+            </div>
+
+            <!-- Jeans Baggy -->
+            <div class="product" id="jeans-baggy">
+                <h4>Jeans Baggy</h4>
+                <img src="jeans-baggy.jpg" alt="Jeans Baggy">
+                <div class="options">
+                    <label for="color-jeans-baggy">Choisir la couleur:</label>
+                    <select id="color-jeans-baggy">
+                        <option value="bleu">Bleu</option>
+                        <option value="noir">Noir</option>
+                        <option value="gris">Gris</option>
+                    </select>
+
+                    <label for="size-jeans-baggy">Choisir la taille:</label>
+                    <select id="size-jeans-baggy">
+                        <option value="xxs">XXS</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <p class="price">Prix: <span class="price-dzd">7 000 DZD</span></p>
+                <button onclick="addToCart('Jeans Baggy', 7000, 'jeans-baggy')">Ajouter au panier</button>
+            </div>
+
+            <!-- Jeans Cargo -->
+            <div class="product" id="jeans-cargo">
+                <h4>Jeans Cargo</h4>
+                <img src="jeans-cargo.jpg" alt="Jeans Cargo">
+                <div class="options">
+                    <label for="color-jeans-cargo">Choisir la couleur:</label>
+                    <select id="color-jeans-cargo">
+                        <option value="beige">Beige</option>
+                        <option value="noir">Noir</option>
+                        <option value="vert">Vert</option>
+                    </select>
+
+                    <label for="size-jeans-cargo">Choisir la taille:</label>
+                    <select id="size-jeans-cargo">
+                        <option value="xxs">XXS</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <p class="price">Prix: <span class="price-dzd">7 500 DZD</span></p>
+                <button onclick="addToCart('Jeans Cargo', 7500, 'jeans-cargo')">Ajouter au panier</button>
+            </div>
+
+            <!-- Jeans Carré -->
+            <div class="product" id="jeans-carre">
+                <h4>Jeans Carré</h4>
+                <img src="jeans-carre.jpg" alt="Jeans Carré">
+                <div class="options">
+                    <label for="color-jeans-carre">Choisir la couleur:</label>
+                    <select id="color-jeans-carre">
+                        <option value="bleu">Bleu</option>
+                        <option value="noir">Noir</option>
+                    </select>
+
+                    <label for="size-jeans-carre">Choisir la taille:</label>
+                    <select id="size-jeans-carre">
+                        <option value="xxs">XXS</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <p class="price">Prix: <span class="price-dzd">6 800 DZD</span></p>
+                <button onclick="addToCart('Jeans Carré', 6800, 'jeans-carre')">Ajouter au panier</button>
+            </div>
+
+            <!-- Jeans Wed Leg -->
+            <div class="product" id="jeans-wedleg">
+                <h4>Jeans Wed Leg</h4>
+                <img src="jeans-wedleg.jpg" alt="Jeans Wed Leg">
+                <div class="options">
+                    <label for="color-jeans-wedleg">Choisir la couleur:</label>
+                    <select id="color-jeans-wedleg">
+                        <option value="bleu">Bleu</option>
+                        <option value="noir">Noir</option>
+                        <option value="gris">Gris</option>
+                    </select>
+
+                    <label for="size-jeans-wedleg">Choisir la taille:</label>
+                    <select id="size-jeans-wedleg">
+                        <option value="xxs">XXS</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <p class="price">Prix: <span class="price-dzd">7 200 DZD</span></p>
+                <button onclick="addToCart('Jeans Wed Leg', 7200, 'jeans-wedleg')">Ajouter au panier</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 hermosa - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Tableau pour stocker les articles du panier
+        let panier = [];
+
+        // Fonction pour ajouter un article au panier
+        function addToCart(nomProduit, prixProduit, idProduit) {
+            let produit = {
+                nom: nomProduit,
+                prix: prixProduit,
+                id: idProduit,
+                couleur: document.getElementById(`color-${idProduit}`).value,
+                taille: document.getElementById(`size-${idProduit}`).value
+            };
+
+            panier.push(produit);
+
+            // Afficher une alerte pour confirmer l'ajout au panier
+            alert(`${nomProduit} (${produit.couleur}, Taille: ${produit.taille}) ajouté au panier pour ${produit.prix} DZD.`);
+        }
+    </script>
+</body>
+</html>

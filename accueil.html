@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermosa - Accueil</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corps de la page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('./image/photo_6032682902317287160_y.jpg'); /* Remplacez ceci par l'URL de votre image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Conteneur principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Titre du site */
+        .site-name {
+            font-family: 'Roboto', sans-serif;
+            font-size: 6em;
+            font-style: oblique;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Message de bienvenue */
+        .welcome-message {
+            margin-bottom: 90px;
+            color: black;
+            font-style: italic;
+            text-align: left;
+            font-size: 1.8em;
+        }
+
+        .welcome-text {
+            font-style: italic;
+            font-size: 2em;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .right-text {
+            font-style: italic;
+            font-size: 1.4em;
+            text-align: right;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Menu de navigation */
+        .menu ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .menu-item:hover {
+            color: #f0a500;
+        }
+
+        /* Menu 3 points */
+        .menu-dots {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            background-color: #fff;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-dropdown a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
+
+        .menu-dropdown a:hover {
+            background-color: #f0a500;
+            color: white;
+        }
+
+        /* Groupe d'icônes panier + contact */
+        .icon-group {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 2.5em;
+            cursor: pointer;
+        }
+
+        .cart-icon,
+        .contact-icon {
+            transition: transform 0.2s;
+            font-size: 0.5em;
+        }
+
+        .cart-icon:hover,
+        .contact-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Barre de recherche */
+        .search-container {
+            position: absolute;
+            top: 20px;
+            right: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar {
+            padding: 8px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Conteneur principal -->
+    <div class="container">
+        <!-- Titre -->
+        <header>
+            <h1 class="site-name">Hermosa</h1>
+        </header>
+
+        <!-- Message de bienvenue -->
+        <section class="welcome-message">
+            <p class="welcome-text">Bienvenue où l'élégance prend vie</p>
+            <p class="right-text">Style affirmé, esprit libre</p>
+        </section>
+
+        <!-- Menu navigation (vide ici, mais structure conservée) -->
+        <nav class="menu">
+            <ul>
+                <!-- Supprimé le panier ici -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Icônes panier + contact -->
+    <div class="icon-group">
+        <span class="cart-icon" title="Panier">🛒</span>
+        <span class="contact-icon" title="Contact">📞</span>
+    </div>
+
+    <!-- Menu 3 points -->
+    <div class="menu-dots" id="menu-dots">...</div>
+    <div class="menu-dropdown" id="menu-dropdown">
+        <a href="./projet.html">Nouvelle Collection</a>
+        <a href="#promotion">Promotion</a>
+        <a href="#articles">Articles</a>
+    </div>
+
+    <!-- Barre de recherche -->
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Rechercher...">
+    </div>
+
+    <!-- Contact Info (masqué au départ) -->
+    <div class="contact-info" id="contact-info">
+        <p><strong>Téléphone :</strong> 05 23 45 67 89</p>
+        <p><strong>Email :</strong> contact@hermosa.com</p>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Affichage du menu des 3 points
+        document.getElementById('menu-dots').addEventListener('click', function() {
+            const dropdown = document.getElementById('menu-dropdown');
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Cacher le menu si on clique en dehors
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('menu-dropdown');
+            const dots = document.getElementById('menu-dots');
+            if (!dots.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Affichage du contact info au clic sur l'icône de contact
+        document.querySelector('.contact-icon').addEventListener('click', function() {
+            const contactInfo = document.getElementById('contact-info');
+            contactInfo.style.display = (contactInfo.style.display === 'block') ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>v

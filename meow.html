@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermosa - Accueil</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Importation de la police Google Fonts pour un meilleur style */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@300;400;500&display=swap');
+
+        /* Corps de la page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('./image/photo_6032682902317287160_y.jpg'); /* Remplacez ceci par l'URL de votre image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Conteneur principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Style du titre du site */
+        .site-name {
+            font-style: italic;
+            font-family: 'Roboto', sans-serif;
+            font-size: 6em;  /* Augmentation de la taille du texte */
+            margin-bottom: 40px;
+            letter-spacing: 2px; /* Un peu d'espace entre les lettres pour plus de style */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Section de bienvenue */
+        .welcome-message {
+            margin-bottom: 90px;
+            color: black;
+            font-style: italic;
+            text-align: left;
+            font-size: 1.8em; /* Augmentation de la taille de la police */
+        }
+
+        .welcome-text {
+            font-style: italic;
+            font-size: 2em;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .right-text {
+            font-style: italic;
+            font-size: 1.4em;
+            text-align: right;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Menu de navigation */
+        .menu ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .menu-item:hover {
+            color: #f0a500; /* Change la couleur au survol */
+        }
+
+        /* 3 points à gauche */
+        .menu-dots {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            background-color: #fff;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-dropdown a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
+
+        .menu-dropdown a:hover {
+            background-color: #f0a500;
+            color: white;
+        }
+
+        /* Panier Emoji à droite avec taille réduite */
+        .cart-icon {
+            font-size: 1em; /* Réduction de la taille de l'emoji */
+            position: absolute;
+            right: 20px; /* Positionné à droite */
+            top: 20px;
+            cursor: pointer;
+        }
+
+        /* Contact Emoji à côté du panier */
+        .contact-icon {
+            font-size: 1em; /* Taille réduite de l'emoji */
+            position: absolute;
+            right: 60px; /* Positionné juste à côté du panier */
+            top: 20px;
+            cursor: pointer;
+        }
+
+        /* Barre de recherche séparée et à droite */
+        .search-container {
+            position: absolute;top: 20px;
+            right: 80px;  /* Espacement à droite pour ne pas chevaucher le panier */
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar {
+            padding: 8px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+        }
+
+        /* Style pour l'affichage des informations de contact */
+        .contact-info {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #fff;
+            color: black;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Conteneur principal -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="site-name">Hermosa</h1>
+        </header>
+
+        <!-- Section de bienvenue -->
+        <section class="welcome-message">
+            <p class="welcome-text">Bienvenue où l'élégance prend vie</p>
+            <p class="right-text">Style affirmé, esprit libre</p>
+        </section>
+
+        <!-- Section des liens -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#panier" class="menu-item"><span class="cart-icon">🛒</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 3 points menu -->
+    <div class="menu-dots" id="menu-dots">...</div>
+    <div class="menu-dropdown" id="menu-dropdown">
+        <a href="./projet.html">Nouvelle Collection</a>
+        <a href="#promotion">Promotion</a>
+        <a href="#articles">Articles</a>
+    </div>
+
+    <!-- Barre de recherche -->
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Rechercher...">
+    </div>
+
+    <!-- Conteneur des icônes -->
+    <div class="contact-icon" id="contact-icon">📞</div>
+    <div class="contact-info" id="contact-info">
+        <p>Email: <a href="mailto:kmslr368@gmail.com">kmslr368@gmail.com</a></p>
+        <p>Téléphone: <a href="tel:+33771850908">0771850908</a></p>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Afficher/masquer le menu des 3 points
+        document.getElementById('menu-dots').addEventListener('click', function() {
+            const dropdown = document.getElementById('menu-dropdown');
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('menu-dropdown');
+            const dots = document.getElementById('menu-dots');
+            if (!dots.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Afficher/masquer les informations de contact
+        document.getElementById('contact-icon').addEventListener('click', function() {
+            const contactInfo = document.getElementById('contact-info');
+            contactInfo.style.display = (contactInfo.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Fermer les informations de contact si on clique en dehors
+        document.addEventListener('click', function(event) {
+            const contactInfo = document.getElementById('contact-info');
+            const contactIcon = document.getElementById('contact-icon');
+            if (!contactIcon.contains(event.target) && !contactInfo.contains(event.target)) {
+                contactInfo.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
